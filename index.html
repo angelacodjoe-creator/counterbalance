@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+    <meta name="theme-color" content="#FAF6EF" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Counterbalance" />
+    <meta name="description" content="The family memory everyone shares" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Counterbalance</title>
+    <style>
+      html, body, #root { height: 100%; }
+      body {
+        margin: 0;
+        background: #FAF6EF;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+        overscroll-behavior-y: none;
+      }
+      * { -webkit-tap-highlight-color: transparent; }
+      input::placeholder { color: #B4AA99; }
+      input:focus { outline: none; }
+      button:focus-visible, input:focus-visible {
+        outline: 2px solid #C2603B; outline-offset: 2px;
+      }
+      @keyframes vb   { from { transform: scaleY(0.35); } to { transform: scaleY(1.4); } }
+      @keyframes toastin { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+      @keyframes sheetin { from { transform: translateY(14px); } to { transform: translateY(0); } }
+      @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DhwCr_Rj.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
